@@ -1,0 +1,44 @@
+@use "./font" as *;
+@use "./variables" as *;
+@mixin mobile {
+    @media screen and (min-width:$mobile-width){
+        @content;
+    }
+}
+@mixin tablet {
+    @media screen and (min-width:$tablet-width){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width:$desktop-width){
+        @content
+    }
+}
+@mixin flexbox($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin fonts($weight: normal) {
+    font-family: 'AvenirNext LT Pro';
+    font-weight: $weight;
+}
+.wrapper {
+    margin: 0 1rem;
+    @include tablet {
+      margin: 0 2.25rem;
+    }
+    @include desktop {
+      max-width: 64rem;
+      margin: 0 auto;
+    }
+  }
+
+  .padding-bottom {
+    padding-bottom: 1rem;
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
+  }
