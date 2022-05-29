@@ -22,11 +22,10 @@
 }
 
 @mixin fonts($weight: normal) {
-    font-family: 'AvenirNext LT Pro';
+    font-family: 'Montserrat', sans-serif;
     font-weight: $weight;
 }
 .wrapper {
-    margin: 0 1rem;
     @include tablet {
       margin: 0 2.25rem;
     }
