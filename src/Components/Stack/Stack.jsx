@@ -55,7 +55,7 @@ export default Stack;
 
 export const Icon = ({ icon, color, onMouseEnter, isSelected }) => {
   return (
-    <motion.div className="stack__icon" style={{ backgroundColor: color }} onMouseEnter={onMouseEnter}>
+    <motion.div className="stack__icon" style={{ backgroundColor: color }} onMouseOver={onMouseEnter}>
       <img className="icon-img" src={icon} alt="" />
       {isSelected &&(<motion.div
         layoutId="outline"

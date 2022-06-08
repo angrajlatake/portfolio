@@ -141,8 +141,9 @@ h1 {
   font-size: 3rem;
   line-height: 3.5rem;
   padding: 1.5rem 0 1rem 0;
+  color: $primary-black;
   @include tablet {
-    font-size: 5rem;
+    font-size: 4rem;
     line-height: 5.5rem;
     padding: 2.25rem 0 1.5rem 0;
   }
@@ -153,8 +154,8 @@ h1 {
 }
 h2 {
   font-family: "Montserrat-SemiBold";
-  font-size: 0.75rem;
-  line-height: 1.25rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
 }
 .h2-light{
   font-family: "Montserrat-Light";

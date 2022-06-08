@@ -26,8 +26,12 @@
     font-weight: $weight;
 }
 .wrapper {
+    @include mobile{
+      padding: 0 1rem;
+    }
     @include tablet {
       margin: 0 2.25rem;
+      padding: 0 2rem;
     }
     @include desktop {
       max-width: 64rem;

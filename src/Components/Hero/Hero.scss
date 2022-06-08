@@ -81,10 +81,6 @@
         @include desktop{
             font-size: 6rem;
         font-weight: bold;
-
-
-
-
         text-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
         }
         
@@ -106,6 +102,7 @@
     &__link{
         position: relative;
         cursor: pointer;
+        transition: all 0.5s ease-in-out;
         &--outline{
             @include tablet{
                 border: 1px solid rgba(211, 211, 211, 0.512);
@@ -115,9 +112,11 @@
                 left: -150px;
                 right: -150px;
                 bottom: -150px;
+
             }
 
         }
+
         &--twitter{
 
             @include tablet{
@@ -171,6 +170,7 @@
             }
 
         }
+
     }
     &__wrapper{
         @include mobile{
@@ -214,6 +214,7 @@
             height: 50px;
             width: 50px;
         }
-
+        transition: all 0.5s ease-in-out;
     }
 }
+
