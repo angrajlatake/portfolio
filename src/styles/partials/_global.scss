@@ -1,6 +1,7 @@
 
 @use "./mixins" as *;
 @use "./variables" as *;
+@use './font' as *;
 
 * {
   box-sizing: border-box;
@@ -107,6 +108,9 @@ menu,
 nav,
 section {
   display: block;
+}
+html{
+  scroll-behavior: smooth;
 }
 body {
   line-height: 1;

@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer" id="contact">
       <div className="footer__wrapper">
         <div className="footer__container">
             <div className="footer__about">
@@ -14,16 +14,16 @@ const Footer = () => {
                 corporis adipisci ad pariatur aliquam laboriosam.
               </p>
             </div>
-            <div class="footer__form-container">
+            <div className="footer__form-container">
               <h2>Login</h2>
               <form className="footer__form">
-                <div class="user-box">
+                <div className="user-box">
                   <input className="footer__form-input" placeholder="Name" type="text" name="" required="" />
                 </div>
-                <div class="user-box">
+                <div className="user-box">
                   <input className="footer__form-input" placeholder="Email" type="email" name="" required="" />
                 </div>
-                <div class="user-box">
+                <div className="user-box">
                   <textarea className="footer__form-input" placeholder="Message" type="text" name="" required="" />
                 </div>
                 <a className="footer__form-btn">

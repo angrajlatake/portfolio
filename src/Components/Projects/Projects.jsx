@@ -5,7 +5,7 @@ const Projects = () => {
 
 
   return (
-    <div className="projects">
+    <div className="projects" id="projects">
         <div className="projects__wrapper">
         <h1 className="projects__title">Projects</h1>
         {
