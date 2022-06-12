@@ -6,7 +6,7 @@ import emailjs from "@emailjs/browser";
 const aboutMotion = {
   show: {
     transition: {
-      delayChildren: 0.5,
+      delayChildren: 1,
       staggerChildren: 0.2,
     },
   },
@@ -30,7 +30,7 @@ const aboutItemMotion = {
 const formMotion = {
   show: {
     transition: {
-      delayChildren: 0.5,
+      delayChildren: 1,
       staggerChildren: 0.2,
     },
   },
@@ -124,7 +124,7 @@ const Footer = () => {
               From a cockpit of a plane to code on a web page, I love combining
               the worlds of logic and creativity to make eye-catching,
               user-friendly interfaces. I graduated from
-              <span>BrainStation</span> with Web Development diploma in Aril
+              <span> BrainStation</span> with Web Development diploma in Aril
               2022. It has been a great journey so far, but I'm looking forward
               to learning more about the world of web development.
               <br /> If you are interested in Aviation or Web Development and
