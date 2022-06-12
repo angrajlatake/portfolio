@@ -17,8 +17,32 @@ const spring = {
   damping: 30,
 };
 
+const stackMotion = {
+  show: {
+    transition: {
+      delayChildren: 0.25,
+      staggerChildren: 0.2,
+    },
+  },
+};
+const stackItemMotion = {
+  hidden: {
+    opacity: 0,
+    y: -50,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6,
+    },
+  },
+};
+
 const Stack = () => {
-    const [selected, setSelected] = useState('white');
+  const [selected, setSelected] = useState("white");
+  const [inView, setInView] = useState(false);
   const stackList = [
     [html, "#f1652944"],
     [css, "#264ce43f"],
@@ -31,39 +55,61 @@ const Stack = () => {
     [mysql, "#01546b44"],
   ];
   return (
-      <AnimateSharedLayout>.
-    <div className="stack">
-      <div className="stack__wrapper">
-        <h1 className="">Stack</h1>
+    <AnimateSharedLayout>
+      .
+      <motion.div
+        className="stack"
+        variants={stackMotion}
+        initial="hidden"
+        onViewportEnter={() => setInView(true)}
+        animate={inView ? "show" : "hidden"}
+        viewport={{ once: true }}
+      >
+        <div className="stack__wrapper">
+          <motion.h1 variants={stackItemMotion} className="">
+            Stack
+          </motion.h1>
 
-        <div className="stack__icons-container">
-          {stackList.map((icon, index) => {
-            return <Icon key={index} icon={icon[0]} color={icon[1]} 
-            onMouseEnter={() => setSelected(icon[1])}
-            isSelected = {selected === icon[1]}
-            />;
-          })}
+          <div className="stack__icons-container">
+            {stackList.map((icon, index) => {
+              return (
+                <Icon
+                  variants={stackItemMotion}
+                  key={index}
+                  icon={icon[0]}
+                  color={icon[1]}
+                  onMouseEnter={() => setSelected(icon[1])}
+                  isSelected={selected === icon[1]}
+                />
+              );
+            })}
+          </div>
         </div>
-
-      </div>
-    </div>
+      </motion.div>
     </AnimateSharedLayout>
   );
 };
 
 export default Stack;
 
-export const Icon = ({ icon, color, onMouseEnter, isSelected }) => {
+export const Icon = ({ variants, icon, color, onMouseEnter, isSelected }) => {
   return (
-    <motion.div className="stack__icon" style={{ backgroundColor: color }} onMouseOver={onMouseEnter}>
+    <motion.div
+      className="stack__icon"
+      style={{ backgroundColor: color }}
+      onMouseOver={onMouseEnter}
+      variants={variants}
+    >
       <img className="icon-img" src={icon} alt="" />
-      {isSelected &&(<motion.div
-        layoutId="outline"
-        className="outline"
-        initial={false}
-        animate={{ borderColor: color }}
-        transition={spring}
-      ></motion.div>)}
+      {isSelected && (
+        <motion.div
+          layoutId="outline"
+          className="outline"
+          initial={false}
+          animate={{ borderColor: color }}
+          transition={spring}
+        ></motion.div>
+      )}
     </motion.div>
   );
 };

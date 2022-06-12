@@ -3,15 +3,17 @@ import LinkedIn from "../../assets/Icons/linkedin.png";
 import Twitter from "../../assets/Icons/twitter.png";
 import Github from "../../assets/Icons/github.png";
 import Gmail from "../../assets/Icons/gmail.png";
-import { useState } from "react";
-import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 //animation variables
 const ring = {
   show: {
     scale: 1.2,
     transition: {
+      delay: 3.2,
       duration: 4,
-      yoyo: Infinity,
+      repeat: Infinity,
+      repeatType: "mirror",
+      repeatDelay: 0.5,
     },
   },
   hover: {
@@ -21,43 +23,105 @@ const ring = {
     },
   },
 };
-const linksHover = {
+
+const iconMotion = {
   show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const linksHover = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6,
+    },
+  },
+  hover: {
     scale: 1.2,
     transition: {
-      duration: 0.5,
+      duration: 0.25,
+    },
+  },
+};
+const heroMotion = {
+  show: {
+    transition: {
+      delayChildren: 3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const heroItemMotion = {
+  hidden: {
+    opacity: 0,
+    y: -100,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [0.6, 0.01, -0.05, 0.95],
+      duration: 1.6,
     },
   },
 };
 
 const Hero = () => {
-  const [linkedInhover, setLinkedInhover] = useState(false);
-  const [twitterhover, setTwitterhover] = useState(false);
-  const [githubhover, setGithubhover] = useState(false);
-  const [gmailhover, setGmailhover] = useState(false);
   return (
-    <div className="hero">
-      <div className="hero__wrapper">
+    <motion.div className="hero" layoutId="hero">
+      <motion.div
+        className="hero__wrapper"
+        variants={heroMotion}
+        initial="hidden"
+        animate="show"
+      >
         <div className="hero__text">
-          <h3 className="hero__name">Angraj Latake</h3>
-          <h1 className="hero__title">
-            <span className="hero__title--main">Front-End</span>
-            <span className="hero__title--sec">Developer</span>
-          </h1>
+          <motion.h3 className="hero__name" variants={heroItemMotion}>
+            Angraj Latake
+          </motion.h3>
+          <motion.h1 className="hero__title" variants={heroItemMotion}>
+            <span
+              style={{ display: "inline-block" }}
+              className="hero__title--main"
+            >
+              Front-End
+            </span>
+            <span
+              style={{ display: "inline-block" }}
+              className="hero__title--sec"
+            >
+              Developer
+            </span>
+          </motion.h1>
         </div>
-        <div className="icons">
+        <motion.div
+          className="icons"
+          variants={iconMotion}
+          initial="hidden"
+          whileInView="show"
+        >
           <motion.a
             href="https://www.linkedin.com/in/angrajlatake/"
+            target="_blank"
+            rel="noreferrer"
             className="icons__link icons__link--linkedIn"
             variants={linksHover}
-            whileHover="show"
-            onMouseEnter={() => setLinkedInhover(true)}
-            onMouseLeave={() => setLinkedInhover(false)}
+            whileHover="hover"
+            initial="hidden"
+            animate="show"
           >
             <motion.div
               className="icons__link--outline"
               variants={ring}
-              animate="show"
+              initial="hidden"
             ></motion.div>
             <span className="icons__wrapper">
               <img src={LinkedIn} alt="LinkedIn" className="icons__img" />
@@ -65,11 +129,13 @@ const Hero = () => {
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/angrajlatake/"
+            target="_blank"
+            rel="noreferrer"
             className="icons__link icons__link--gmail"
             variants={linksHover}
-            whileHover="show"
-            onMouseEnter={() => setGmailhover(true)}
-            onMouseLeave={() => setGmailhover(false)}
+            whileHover="hover"
+            initial="hidden"
+            animate="show"
           >
             <motion.div
               className="icons__link--outline"
@@ -82,11 +148,13 @@ const Hero = () => {
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/angrajlatake/"
+            target="_blank"
+            rel="noreferrer"
             className="icons__link icons__link--github"
             variants={linksHover}
-            whileHover="show"
-            onMouseEnter={() => setGithubhover(true)}
-            onMouseLeave={() => setGithubhover(false)}
+            whileHover="hover"
+            initial="hidden"
+            animate="show"
           >
             <motion.div
               className="icons__link--outline"
@@ -99,11 +167,13 @@ const Hero = () => {
           </motion.a>
           <motion.a
             href="https://www.linkedin.com/in/angrajlatake/"
+            target="_blank"
+            rel="noreferrer"
             className="icons__link icons__link--twitter"
             variants={linksHover}
-            whileHover="show"
-            onMouseEnter={() => setTwitterhover(true)}
-            onMouseLeave={() => setTwitterhover(false)}
+            whileHover="hover"
+            initial="hidden"
+            animate="show"
           >
             <motion.div
               className="icons__link--outline"
@@ -114,9 +184,9 @@ const Hero = () => {
               <img src={Twitter} alt="LinkedIn" className="icons__img" />
             </span>
           </motion.a>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
