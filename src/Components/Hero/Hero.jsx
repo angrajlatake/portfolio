@@ -128,7 +128,7 @@ const Hero = () => {
             </span>
           </motion.a>
           <motion.a
-            href="https://www.linkedin.com/in/angrajlatake/"
+            href="mailto:webmaster@example.com"
             target="_blank"
             rel="noreferrer"
             className="icons__link icons__link--gmail"
@@ -143,11 +143,11 @@ const Hero = () => {
               animate="show"
             ></motion.div>
             <span className="icons__wrapper icons__wrapper--gmail">
-              <img src={Gmail} alt="LinkedIn" className="icons__img" />
+              <img src={Gmail} alt="Gmail" className="icons__img" />
             </span>
           </motion.a>
           <motion.a
-            href="https://www.linkedin.com/in/angrajlatake/"
+            href="https://github.com/angrajlatake"
             target="_blank"
             rel="noreferrer"
             className="icons__link icons__link--github"
@@ -162,11 +162,11 @@ const Hero = () => {
               animate="show"
             ></motion.div>
             <span className="icons__wrapper icons__wrapper--github ">
-              <img src={Github} alt="LinkedIn" className="icons__img" />
+              <img src={Github} alt="github" className="icons__img" />
             </span>
           </motion.a>
           <motion.a
-            href="https://www.linkedin.com/in/angrajlatake/"
+            href="https://twitter.com/angrajlatake"
             target="_blank"
             rel="noreferrer"
             className="icons__link icons__link--twitter"
@@ -181,7 +181,7 @@ const Hero = () => {
               animate="show"
             ></motion.div>
             <span className="icons__wrapper icons__wrapper--twitter">
-              <img src={Twitter} alt="LinkedIn" className="icons__img" />
+              <img src={Twitter} alt="twitter" className="icons__img" />
             </span>
           </motion.a>
         </motion.div>
