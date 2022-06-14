@@ -92,7 +92,7 @@ const Hero = () => {
               style={{ display: "inline-block" }}
               className="hero__title--main"
             >
-              Front-End
+              Full Stack
             </span>
             <span
               style={{ display: "inline-block" }}
