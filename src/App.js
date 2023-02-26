@@ -1,13 +1,11 @@
 import "./App.scss";
-import Hero from "./Components/Hero/Hero";
-import Stack from "./Components/Stack/Stack";
 import Loader from "./Components/Loader/Loader";
-import Projects from "./Components/Projects/Projects";
 import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import SmoothScroll from "./Components/Function/SmoothScroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import Home from "./pages/Home";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,9 +20,7 @@ function App() {
           ) : (
             <>
               <Navbar />
-              <Hero layoutId="hero" />
-              <Stack />
-              <Projects />
+              <Home />
               <Footer />
             </>
           )}

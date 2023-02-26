@@ -9,7 +9,7 @@ import python from "../../assets/Icons/python.png";
 import MongoDB from "../../assets/Icons/mongodb.png";
 import mysql from "../../assets/Icons/mysql.png";
 
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { motion, AnimateSharedLayout } from "framer-motion";
 import { useState } from "react";
 const spring = {
   type: "spring",
