@@ -9,14 +9,6 @@ import SmoothScroll from "./Components/Function/SmoothScroll";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-// make mobile menu disappear once the window is resized
-//TODO: add custom pointer
-//TODO: show navbar on scroll up
-//TODO: Add a parallax effect to the hero
-//TODO: Add a parallax effect to the stack
-//TODO: Add a parallax effect to the projects
-//TODO: adjust hero icons to be smaller
-
 function App() {
   const [loading, setLoading] = useState(true);
   return (
