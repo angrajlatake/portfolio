@@ -1,6 +1,6 @@
 import React, { useRef, useState, useCallback, useLayoutEffect } from "react";
 import "./SmoothScroll.scss";
-import ResizeObserver from "resize-observer-polyfill";
+
 import {
   useViewportScroll,
   useTransform,
