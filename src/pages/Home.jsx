@@ -5,6 +5,8 @@ import Stack from "../Components/Stack/Stack";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Loader from "../Components/Loader/Loader";
+import Navbar from "../Components/Navbar/Navbar";
+import Footer from "../Components/Footer/Footer";
 const Home = () => {
   const [loading, setLoading] = useState(true);
   return (
@@ -15,9 +17,11 @@ const Home = () => {
         </motion.div>
       ) : (
         <>
+          <Navbar />
           <Hero layoutId="hero" />
           <Stack />
           <Projects />
+          <Footer />
         </>
       )}
     </AnimatePresence>
