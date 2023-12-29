@@ -12,6 +12,7 @@ export const projectList = [
     image: Tasky,
     link: "https://angrajlatake-tasky.netlify.app//",
     repo: "https://github.com/angrajlatake/Tasky",
+    apiLink: "https://tasky-api-70ie.onrender.com",
   },
   {
     id: 1,
@@ -30,6 +31,7 @@ export const projectList = [
     image: inStock,
     link: "https://angrajlatake-instock.netlify.app/",
     repo: "https://github.com/angrajlatake/InStock",
+    apiLink: "https://instock-api-eck5.onrender.com/warehouses",
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ export const projectList = [
     image: BrainFlix,
     link: "https://angrajlatake-brainflix.netlify.app/",
     repo: "https://github.com/angrajlatake/brainflix",
+    apiLink: "https://brainflix-api-zfjp.onrender.com",
   },
   {
     id: 4,

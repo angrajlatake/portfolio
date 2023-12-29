@@ -1,7 +1,10 @@
 import "./Projects.scss";
 import { projectList } from "./ProjectList";
 import { motion } from "framer-motion";
-
+import Lottie from "lottie-react";
+import connection from "../../assets/animations/connection.json";
+import connected from "../../assets/animations/connected.json";
+import { useEffect, useState } from "react";
 const CardMotion = {
   show: {
     transition: {
@@ -41,6 +44,7 @@ const Projects = () => {
               link={project.link}
               id={project.id}
               repo={project.repo}
+              apiLink={project?.apiLink}
             />
           );
         })}
@@ -51,7 +55,23 @@ const Projects = () => {
 
 export default Projects;
 
-export const Card = ({ img, title, desc, link, id, repo }) => {
+export const Card = ({ img, title, desc, link, id, repo, apiLink }) => {
+  const [loading, setLoading] = useState(true);
+  const [complete, setComplete] = useState(false);
+  useEffect(() => {
+    if (apiLink) {
+      fetch(apiLink)
+        .then((res) => {
+          if (res.ok) {
+            setLoading(false);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, [apiLink]);
+
   return (
     <>
       {id % 2 === 0 ? (
@@ -66,6 +86,33 @@ export const Card = ({ img, title, desc, link, id, repo }) => {
             <motion.div variants={CardItemMotion} className="card__text">
               <h2 className="card__heading">{title}</h2>
               <p className="card__desc">{desc}</p>
+              {apiLink && !complete && (
+                <div className="card__buttons">
+                  <Lottie
+                    animationData={connection}
+                    onLoopComplete={() => {
+                      if (!loading) {
+                        setComplete(true);
+                      }
+                    }}
+                    style={{ height: "50px", width: "50px" }}
+                  />
+                  <p className="card__button-text">
+                    Spinning up idle server. Give us a minute
+                  </p>
+                </div>
+              )}
+              {complete && (
+                <div className="card__buttons">
+                  <Lottie
+                    animationData={connected}
+                    style={{ height: "70px", width: "70px" }}
+                  />
+                  <p className="card__button-text">
+                    Server is Ready. Click View to see the app
+                  </p>
+                </div>
+              )}
               <div className="card__buttons">
                 <a
                   href={link}
@@ -111,6 +158,33 @@ export const Card = ({ img, title, desc, link, id, repo }) => {
             <motion.div variants={CardItemMotion} className="card__text">
               <h2 className="card__heading">{title}</h2>
               <p className="card__desc">{desc}</p>
+              {apiLink && !complete && (
+                <div className="card__buttons">
+                  <Lottie
+                    animationData={connection}
+                    onLoopComplete={() => {
+                      if (!loading) {
+                        setComplete(true);
+                      }
+                    }}
+                    style={{ height: "50px", width: "50px" }}
+                  />
+                  <p className="card__button-text">
+                    Spinning up idle server. Give us a minute
+                  </p>
+                </div>
+              )}
+              {complete && (
+                <div className="card__buttons">
+                  <Lottie
+                    animationData={connected}
+                    style={{ height: "70px", width: "70px" }}
+                  />
+                  <p className="card__button-text">
+                    Server is Ready. Click View to see the app
+                  </p>
+                </div>
+              )}
               <div className="card__buttons">
                 <a
                   href={link}

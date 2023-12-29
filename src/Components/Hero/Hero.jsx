@@ -76,7 +76,7 @@ const heroItemMotion = {
 
 const Hero = () => {
   return (
-    <motion.div className="hero" layoutId="hero">
+    <motion.div className="hero" layoutId="hero" id="hero">
       <motion.div
         className="hero__wrapper"
         variants={heroMotion}
